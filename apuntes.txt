@@ -1,4 +1,0 @@
-Models: Capa de persistencia, donde los datos estan persistentes (la base de datos, los beans y los Daos)
-Los beans son lo que viaja entre capas.
-Si no tiene forma de tabla, se usa DTO.
-FRAMEWORK: MARCO DE TRABAJO, DA SEGURIDAD ANTES ATAQUES.
