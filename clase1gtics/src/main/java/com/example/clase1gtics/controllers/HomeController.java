@@ -5,30 +5,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-//DEBO DECIRLE A SPRING QE ESTO ES UN CONTROLLER
-//ESE SIMBOLITO ES UN FRIJOL, Y POR LO TANTO SIGNIFICA bean
 
+//EL HomeController es un Controller general por así decirlo para gestionar a todos los demás controladores
+//LOS CONTROLADORES GESTIONAN SOLICITUDES HTTP
+
+//DEBO DECIRLE A SPRING QUE ESTO ES UN CONTROLLER, POR ESO PONGO @Controller
 @Controller
+//ESE SIMBOLITO ES UN FRIJOL, Y POR LO TANTO SIGNIFICA bean
+//ESTA ES UNA CLASE POJO
 public class HomeController {
 
-    //CUANDO ALGUIEN PONGA LA RUTA DEL INDEX EN EL NAVEGADOR, ESTO VA A LLEGAR AQUÍ:
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    //USAMOS @RequestMapping PARA INDICAR CUAL ES LA RUTA (url web) que identificará a este controlador
+    //PARA MAPEAR LA RUTA RAÍZ ESTAMOS UTILIZANDO "/"
+    //ES TAMBIEN IMPORTANTE PONER EL MÉTODO, EN ESTE CASO, ES METODO GET, PERO PODRÍA SER: GET, POST, PUT Y DELETE
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    //AHORA, USAREMOS @ResponseBody para que se responda lo que dice en return, si no quieres que se uestra exactamente eso, lo quitas
     @ResponseBody
     public String paginaPrincipal(){
-        //SPRING ESPERARÁ QUE TÚ LE PONGAS EL NOMBRE DE LA VISTA QUE QUIERAS PONER
-        return "Hola Mundo GAAAAA";
+        return "hola ciclo 2023-2 :D";
     }
 
-    //AHORA ENVÉS DE LOS SWITCH Y CASES, AHORA CREAMOS OTRO METODO
-    @RequestMapping(value = {"/empleado", "/employee", "/emp"})
-    public String empleado(){
-        //SPRING ESPERARÁ QUE TÚ LE PONGAS EL NOMBRE DE LA VISTA QUE QUIERAS PONER
+    //ESTO ES UNA VISTA QUE YO ESTOY AÑADIENDO A MODO DE EJEMPLO
+    @RequestMapping(value = {"/holaMundo"})
+    public String holiwis(){
+        //NOTAR QUE NO ES NECESARIO DECIR QUE ESTOY USANDO LA EXTENSIÓN HTML, ES QUE YA SE ASUME POR DEFECTO
+        //NO PONGO NINGÚN SLASH PORQUE DIRECTAMENTE SE AGREGA DE LA CARPETA TEMPLATES
+        return "hola";
+    }
 
-        //PARA RESPONDER CON UN VISTA, DEBO BORRAR ResponseBody
+    //NOTAR QUE AQUÍ HEMOS MAPEADO MULTIPLES RUTAS PARA EL MISMO METODO
+    @RequestMapping(value = {"/empleado1","/employee1","/em1"})
+    public String empleado(){
         return "pag1";
     }
-
-    //thymeleaf
-
-
 }
