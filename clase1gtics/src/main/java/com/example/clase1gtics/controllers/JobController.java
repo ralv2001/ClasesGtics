@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+//GET TRAE DATOS
+//POST GUARDA DATOS, POR LO QUE YO DESDE LA VISTA MANDO DATOS PARA QUE SE GUARDEN
+
 @Controller
 @RequestMapping("/job")
 public class JobController {
@@ -51,7 +54,7 @@ public class JobController {
         System.out.println("nombre recibido: " + nombre);
         System.out.println("id recibido: " + id);
 
-
+        //EL MODEL ES EL QUE SE VA A ENCARGAR DE GUARDAR LOS DATOS EN LA BASE DE DATOS
         model.addAttribute("id",id);
         model.addAttribute("nombre",nombre);
         //INSTANCIAMOS UNA PERSONA, PARA ASÍ PONERLE su nombre y apellido.

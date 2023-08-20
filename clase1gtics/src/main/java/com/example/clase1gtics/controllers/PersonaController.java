@@ -30,8 +30,8 @@ public class PersonaController {
         System.out.println("apellido recibido: " + apellidito);
 
         //VOY A GUARDAR EL NOMBRESITO QUE HE RECIBIDO EN EL APELLIDO
-        model.addAttribute("nombre",nombresito);
-        model.addAttribute("apellido",apellidito);
+        model.addAttribute("nombresote",nombresito);
+        model.addAttribute("apellidote",apellidito);
         //INSTANCIAMOS UNA PERSONA, PARA ASÍ PONERLE su nombre y apellido.
         //NOTEMOS QUE NO ESTAMOS HACIENDO REQUEST DE NINGÚN APELLIDO EN EL FORO, SOLO LO ESTAMOS PONIENDO Y YA
         Persona p = new Persona();
@@ -39,7 +39,7 @@ public class PersonaController {
         p.setApellido(apellidito);
 
         //ACÁ SE ESTARÁ ENVIANDO EL DATO almacenado en la varibale p, y se está guardando en la variable "persona"
-        model.addAttribute("persona",p);
+        model.addAttribute("personajebarbaro",p);
         return "persona/datos";
     }
 
