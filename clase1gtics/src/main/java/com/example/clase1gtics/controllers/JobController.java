@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 public class JobController {
 
     //  /job
+    //NOTAR QUE HEMOS USADO GetMapping PORQUE ESTAMOS ASUMIENDO QUE EL MÉTODO ES GET
+    //ESTO ES LO MISMO QUE @RequestMapping(value = "",method = RequestMethod.GET)
     @GetMapping(value = "")
     public String listar() {
         return "job/lista";
@@ -37,18 +39,28 @@ public class JobController {
         return "job/lista";
     }
 
+    //AHORA VAMOS A HACER COMO UN COMBINADA, VAMOS A HACER REQUEST DE INFORMACIÓN, LA VAMOS A ALMACENAR ACÁ Y DE AHÍ LA VAMOS
+    //A VOLVER A ENVIAR A LAS VISTAS
     //   /job/guardar
+    //NOTAR QUE HEMOS USADO PostMapping PORQUE ESTAMOS ASUMIENDO QUE EL MÉTODO ES POST
+    //ESTO ES LO MISMO QUE @RequestMapping(value = "/guardar",method = RequestMethod.POST)
     @PostMapping("/guardar")
     public String guardar(Model model,
                           @RequestParam("id") Integer id,
                           @RequestParam("nombre") String nombre) {
         System.out.println("nombre recibido: " + nombre);
         System.out.println("id recibido: " + id);
+
+
         model.addAttribute("id",id);
         model.addAttribute("nombre",nombre);
+        //INSTANCIAMOS UNA PERSONA, PARA ASÍ PONERLE su nombre y apellido.
+        //NOTEMOS QUE NO ESTAMOS HACIENDO REQUEST DE NINGÚN APELLIDO EN EL FORO, SOLO LO ESTAMOS PONIENDO Y YA
         Persona p = new Persona();
         p.setNombre(nombre);
         p.setApellido("Perez");
+
+        //ACÁ SE ESTARÁ ENVIANDO EL DATO almacenado en la varibale p, y se está guardando en la variable "persona"
         model.addAttribute("persona",p);
         return "job/datos";
     }
