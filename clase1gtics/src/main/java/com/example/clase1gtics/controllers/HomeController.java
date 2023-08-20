@@ -36,6 +36,7 @@ public class HomeController {
     //NOTAR QUE AQUÍ HEMOS MAPEADO MULTIPLES RUTAS PARA EL MISMO METODO
     @RequestMapping(value = {"/empleado1","/employee1","/em1"})
     public String empleado(){
+        //Seguimos retornando un html
         return "pag1";
     }
 }
