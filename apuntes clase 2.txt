@@ -1,0 +1,35 @@
+info hace referencia al estado de la iteración
+Los arreglos arrancan en 0, no olvidar eso.
+
+Para hacer un combobox:
+El th each se coloca en la sección del código que quiero que se repita
+
+Condicional? True : False
+
+Para este caso, sería:
+
+? 'par' : 'impar'
+
+JPA: JAVA PERSISTENCE API
+
+Los Daos ahora se van a llamar Repositorios, que son los que acceden a la base de Datos.
+
+Hay una librería para usar el JPA
+
+Notemos que esto tiene starter, por lo tanto, no hay que hacer muchas configuraciones
+
+Para conectarme a la base de datos, necesito:
+1. Url
+2. Puerto 
+3. Usuario
+4. Contraseña
+
+spring.datasource.url = jdbc:mysql://localhost:3306/northwind
+spring.datasource.username = root
+spring.datasource.password = root
+
+Si la BD no tiene password, entonces no ponemos nada
+
+Para JPA hay que crear 3 cosas:
+1. Entidad (Beans)
+2. Repositorios (Daos)
