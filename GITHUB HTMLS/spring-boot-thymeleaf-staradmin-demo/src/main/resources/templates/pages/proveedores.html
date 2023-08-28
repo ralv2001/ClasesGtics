@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .custom-flex-auto {
+            flex: auto;
+        }
+        .custom-image-container {
+            width: 60px;
+            height: 60px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #c6c6c6;
+        }
+        .text-limited-container {
+            max-width: 250px;
+        }
+        .text-limited {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+<body>
+<section layout:fragment="content">
+    <div class="card">
+        <div class="card-body">
+            <!-- Encabezado de vista -->
+            <div class="d-flex justify-content-between">
+
+                <!-- Grupo Filtro de búsqueda -->
+                <div class="w-50 d-flex align-items-start">
+                    <div class="mr-2 custom-flex-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Buscar proveedor</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="menu-icon mdi mdi-magnify"></i>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm">
+                        <i class="menu-icon mdi mdi-filter-variant"></i>
+                    </button>
+                </div>
+                <!-- Grupo Filtro de búsqueda -->
+
+                <!-- Grupo de acciones de vista -->
+                <div>
+                    <button type="button" class="btn btn-light">Listar baneados</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="menu-icon mdi mdi-plus"></i> Crear proveedor
+                    </button>
+                </div>
+                <!-- Grupo de acciones de vista -->
+            </div>
+
+            <!-- Cuerpo de la vista -->
+            <!-- <table class="table table-hover table-striped table-bordered table-responsive mt-3">
+                <thead>
+                <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Foto de perfil</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Slogan</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="element, iterstat: ${proveedores}">
+                    <th scope="row" th:text="${element.id}"></th>
+                    <td>
+                        <img th:src="${element.foto}"/>
+                    </td>
+                    <td th:text="${element.nombre}"></td>
+                    <td th:text="${element.slogan}"></td>
+                    <td>
+                        <button type="button" class="btn btn-primary mr-2">Editar</button>
+                        <button type="button" class="btn btn-danger">Desactivar</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table> -->
+
+            <table class="table table-hover table-striped table-bordered table-responsive mt-3">
+                <thead>
+                <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Foto de perfil</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Slogan</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="element, iterstat: ${proveedores}">
+                    <th scope="row" th:text="${element.id}"></th>
+                    <td>
+                        <div class="custom-image-container" th:style="'background-image: url(' +  ${element.foto} + ');'"></div>
+                    </td>
+                    <td th:text="${element.nombre}"></td>
+                    <!--  class="text-limited-container" -->
+                    <td>
+                        <!-- class="text-limited" -->
+                        <span th:text="${element.slogan}"></span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="Editar proveedor">
+                            <i class="menu-icon mdi mdi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Desactivar proveedor">
+                            <i class="menu-icon mdi mdi-block-helper"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+</body>
+</html>
