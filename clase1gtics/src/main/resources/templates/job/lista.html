@@ -3,10 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
+        <style>
+            .btn {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .btn-primary {
+                color: #fff;
+                background-color: #007BFF;
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+        </style>
+
     </head>
     <body>
         <h1>Lista de trabajos</h1>
-        <a th:href="@{/job/crearform}">Crear trabajo</a>
+        <!-- Esto está haciendo que cuando tu le des al botón de Crear trabajo, este automáticamente te redirija a la ruta {/job/crearform}
+        esa ruta la puedes encontrar en el Job Controller-->
+        <a th:href="@{/job/crearform}" class="btn btn-primary">Crear trabajo</a>
+
         <table>
             <tr>
                 <th>#</th>
