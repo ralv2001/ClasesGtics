@@ -1,6 +1,6 @@
-package com.farhan.staradmin.controller;
+package com.farhan.staradmin.controllers;
 
-import com.farhan.staradmin.domain.Proveedor;
+import com.farhan.staradmin.entity.Proveedor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;

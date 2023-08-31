@@ -1,4 +1,4 @@
-package com.farhan.staradmin.controller;
+package com.farhan.staradmin.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(value = "pages")
-public class FormElementsController {
+public class TableElements {
 
-    @GetMapping(value = "form-elements")
-    public ModelMap mmFormElements() {
+    @GetMapping(value = "table-elements")
+    public ModelMap mmTableElements() {
         return new ModelMap();
     }
 

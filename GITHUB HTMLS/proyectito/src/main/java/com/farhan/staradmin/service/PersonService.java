@@ -1,6 +1,6 @@
 package com.farhan.staradmin.service;
 
-import com.farhan.staradmin.domain.Person;
+import com.farhan.staradmin.entity.Person;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
