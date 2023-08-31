@@ -1,6 +1,6 @@
-package com.farhan.staradmin.controller;
+package com.farhan.staradmin.controllers;
 
-import com.farhan.staradmin.domain.Person;
+import com.farhan.staradmin.entity.Person;
 import com.farhan.staradmin.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

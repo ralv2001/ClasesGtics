@@ -1,4 +1,4 @@
-package com.farhan.staradmin.controller;
+package com.farhan.staradmin.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(value = "pages")
+public class DashboardController {
 
-public class EquiposController {
-    @GetMapping(value = "equipos")
-    public ModelMap mmEquipos() { return new ModelMap(); }
+    @GetMapping(value = "dashboard")
+    public ModelMap mmDashboard() {
+        return new ModelMap();
+    }
+
 }
-
-
-

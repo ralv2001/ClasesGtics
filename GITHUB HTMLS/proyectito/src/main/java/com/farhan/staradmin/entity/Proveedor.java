@@ -1,4 +1,4 @@
-package com.farhan.staradmin.domain;
+package com.farhan.staradmin.entity;
 
 public class Proveedor {
 
