@@ -49,13 +49,13 @@ public class JobController {
     //ESTO ES LO MISMO QUE @RequestMapping(value = "/guardar",method = RequestMethod.POST)
     @PostMapping("/guardar")
     public String guardar(Model model,
-                          @RequestParam("id") Integer id,
+                          @RequestParam("id") Integer idbamba,
                           @RequestParam("nombre") String nombre) {
         System.out.println("nombre recibido: " + nombre);
-        System.out.println("id recibido: " + id);
+        System.out.println("id recibido: " + idbamba);
 
         //EL MODEL ES EL QUE SE VA A ENCARGAR DE GUARDAR LOS DATOS EN LA BASE DE DATOS
-        model.addAttribute("id",id);
+        model.addAttribute("id",idbamba);
         model.addAttribute("nombre",nombre);
         //INSTANCIAMOS UNA PERSONA, PARA ASÍ PONERLE su nombre y apellido.
         //NOTEMOS QUE NO ESTAMOS HACIENDO REQUEST DE NINGÚN APELLIDO EN EL FORO, SOLO LO ESTAMOS PONIENDO Y YA
@@ -64,6 +64,7 @@ public class JobController {
         p.setApellido("Perez");
 
         //ACÁ SE ESTARÁ ENVIANDO EL DATO almacenado en la varibale p, y se está guardando en la variable "persona"
+        //De hecho, la variable "persona" (la que está entre comillas y es de color verde) es el dato que se va a mandar a la vista html
         model.addAttribute("persona",p);
         return "job/datos";
     }
