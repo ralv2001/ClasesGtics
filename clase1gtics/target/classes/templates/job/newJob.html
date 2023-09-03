@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Nuevo trabajo</h1>
+        <!-- De igual manera, cuando le des clic al botón Enviar, el html va a ir a la ruta{/job/guardar}.
+        Esa ruta la puedes encontrar en el Job Controller-->
+        <!-- La diferencia es que esa ruta ahora no solamente va a redireccionarte a un html, sino va a hacer
+        un proceso de recopilación de datos, para de ahí recien mandarte un html de retorno :)-->
+        <form method="post" th:action="@{/job/guardar}">
+            <label>id</label>
+            <input name="id"/>
+            <br>
+            <label>Nombre</label>
+            <input name="nombre" />
+            <br>
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>
